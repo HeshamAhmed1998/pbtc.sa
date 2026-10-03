@@ -125,38 +125,4 @@
         document.getElementById('contactModal').addEventListener('click', function(e) {
             if (e.target === this) closeContact();
         });
-        async function sendMessage() {  } async function sendMessage_disabled() {
-            const name = document.getElementById('cName').value;
-            const phone = document.getElementById('cPhone').value;
-            const email = document.getElementById('cEmail').value;
-            const subject = document.getElementById('cSubject').value;
-            const message = document.getElementById('cMessage').value;
-            if (!name || !subject || !message) {
-                alert('يرجى ملئ الحقول المطلوبة');
-                return;
-            }
-            try {
-                const formData = new FormData();
-                formData.append('Name', name);
-                formData.append('Phone', phone);
-                formData.append('Email', email);
-                formData.append('Subject', subject);
-                formData.append('Message', message);
-                const token = document.querySelector('input[name="__RequestVerificationToken"]');
-                if (token) formData.append('__RequestVerificationToken', token.value);
-                const response = await fetch('/Home/ContactAjax', {
-                    method: 'POST',
-                    body: formData
-                });
-                if (response.ok) {
-                    document.getElementById('successMsg').style.display = 'block';
-                    document.getElementById('errorMsg').style.display = 'none';
-                    document.getElementById('contactForm').reset();
-                } else {
-                    document.getElementById('errorMsg').style.display = 'block';
-                }
-            } catch {
-                document.getElementById('errorMsg').style.display = 'block';
-            }
-        }
     
