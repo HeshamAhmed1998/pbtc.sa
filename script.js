@@ -125,14 +125,14 @@
         document.getElementById('contactModal').addEventListener('click', function(e) {
             if (e.target === this) closeContact();
         });
-        async function sendMessage() { alert("شكراً! سيتم التواصل معكم قريباً."); return; } async function sendMessage_disabled() {
+        async function sendMessage() {  } async function sendMessage_disabled() {
             const name = document.getElementById('cName').value;
             const phone = document.getElementById('cPhone').value;
             const email = document.getElementById('cEmail').value;
             const subject = document.getElementById('cSubject').value;
             const message = document.getElementById('cMessage').value;
             if (!name || !subject || !message) {
-                alert('يرجى ملء الحقول المطلوبة');
+                alert('يرجى ملئ الحقول المطلوبة');
                 return;
             }
             try {
