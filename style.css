@@ -409,7 +409,7 @@
 
         /* Sections - سكرول عادي بدل fullPage */
         .section {
-            min-height: 100vh;
+            min-height: 50vh;
             padding-top: 0;
         }
 
